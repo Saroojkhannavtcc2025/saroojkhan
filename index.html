@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Image Gallery</title>
+
+<style>
+body{margin:0;font-family:Arial;background:#fca8a8}
+header{text-align:center;padding:20px;font-size:28px;background:#000;color:#fff}
+.section-title{text-align:center;font-size:26px;margin:20px 0;color:#000;font-weight:bold}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px;padding:20px}
+.gallery img{width:100%;height:250px;object-fit:cover;border-radius:15px;cursor:pointer;transition:.3s}
+.gallery img:hover{transform:scale(1.05)}
+
+.lightbox{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.9);display:none;justify-content:center;align-items:center}
+.lightbox img{max-width:90%;max-height:80%}
+.lightbox.active{display:flex}
+.close{position:absolute;top:20px;right:40px;font-size:30px;color:#fff;cursor:pointer}
+</style>
+</head>
+
+<body>
+
+<header>My Illustrator & Photoshop Design</header>
+
+<div class="section-title">Illustrator Design</div>
+<div class="gallery">
+<img src="image/Banner design.jpg">
+<img src="image/book cover.jpg">
+<img src="image/House Mazdosri1.jpg">
+<img src="image/Ramdan calender.jpg">
+<img src="image/Ramdan poster.jpg">
+<img src="image/birthday poster 2.jpg">
+<img src="image/fonts Logo.jpg">
+<img src="image/Geomatric art 2.jpg">
+<img src="image/Geomatric art.jpg">
+<img src="image/Minimalist logo.jpg">
+<img src="image/Minimalist art.jpg">
+<img src="image/Mascot logo.jpg">
+<img src="image/Emblem logo.jpg">
+<img src="image/BOOK GIRL.jpg">
+<img src="image/Flyer.jpg">
+<img src="image/letter.jpg">
+<img src="image/Envelope.jpg">
+<img src="image/certificate.jpg">
+<img src="image/abstract logo.jpg">
+<img src="image/Business CArd.jpg">
+<img src="image/Brochoure Design.jpg">
+<img src="image/news.jpeg">
+
+<img src="image/Wedding Card.jpg">
+<img src="image/stande design.jpg">
+<img src="image/Test MAscot logo.jpg">
+<img src="image/BANNER2.jpg">
+<img src="image/typography.jpg">
+</div>
+
+<div class="section-title">Photoshop Design</div>
+<div class="gallery">
+<img src="image/movie poster.png">
+<img src="image/movie poster1.png">
+<img src="image/thumbnail.png">
+<img src="image/thumbnail.psd3.png">
+<img src="image/fast food poster.png">
+<img src="image/fast foods.png">
+<img src="image/bottle1.png">
+<img src="image/camera.png">
+<img src="image/thumnail.png">
+<img src="image/Clone stamp tool.png">
+<img src="image/consertt.png">
+<img src="image/consert.png">
+<img src="image/eid poster.png">
+<img src="image/Brush Tool Car light effect.png">
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+<span class="close" onclick="closeImg()">&times;</span>
+<img id="lightbox-img">
+</div>
+
+<script>
+const images = document.querySelectorAll('.gallery img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+
+images.forEach(img => {
+  img.addEventListener('click', () => {
+    lightbox.classList.add('active');
+    lightboxImg.src = img.src;
+  });
+});
+
+function closeImg(){
+  lightbox.classList.remove('active');
+}
+</script>
+
+</body>
+</html>
